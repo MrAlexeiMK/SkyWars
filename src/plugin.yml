@@ -1,0 +1,10 @@
+name: SkyWars
+main: argento.skywars.Main
+version: 1.0
+api-version: 1.13
+author: Argento
+depend: [Vault, API, TAB]
+commands:
+  skywars:
+    aliases: [sw]
+  dis:

@@ -1,0 +1,6 @@
+win_money: 50
+kill_money: 5
+arena:
+  name: null
+  status: edit
+  spawns: []
