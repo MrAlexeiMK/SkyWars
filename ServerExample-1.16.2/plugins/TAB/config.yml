@@ -1,0 +1,182 @@
+# Detailed explanation of all options available at https://github.com/NEZNAMY/TAB/wiki/config.yml
+
+change-nametag-prefix-suffix: true
+change-tablist-prefix-suffix: true
+enable-header-footer: true
+global-playerlist:
+  enabled: false
+  display-others-as-spectators: false
+  spy-servers: []
+  server-groups:
+    lobbies: []
+    group2: []
+header:
+- '&7[&cVaultGames&7]'
+footer:
+- '&7Донат покупать на сайте: &cVaultCommunity.ru'
+yellow-number-in-tablist: '%health%'
+group-sorting-priority-list:
+- glav
+- youtube
+- admin
+- moder
+- helper
+- premium
+- mvp+
+- mvp
+- vip+
+- vip
+- player
+- default
+Groups:
+  glav:
+    tabprefix: '&cОснователь&f: &f'
+    tagprefix: '&cОснователь&f: &f'
+  youtube:
+    tabprefix: '&cYouTuber&f: &f'
+    tagprefix: '&cYouTuber&f: &f'
+  admin:
+    tabprefix: '&4Админ&f: &f'
+    tagprefix: '&4Админ&f: &f'
+  moder:
+    tabprefix: '&2Moder&f: &f'
+    tagprefix: '&2Moder&f: &f'
+  helper:
+    tabprefix: '&9Helper&f: &f'
+    tagprefix: '&9Helper&f: &f'
+  premium:
+    tabprefix: '&3Premium&f: &f'
+    tagprefix: '&3Premium&f: &f'
+  mvp+:
+    tabprefix: '&bMVP&a+&f: &f'
+    tagprefix: '&bMVP&a+&f: &f'
+  mvp:
+    tabprefix: '&bMVP&f: &f'
+    tagprefix: '&bMVP&f: &f'
+  vip+:
+    tabprefix: '&6VIP&b+&f: &f'
+    tagprefix: '&6VIP&b+&f: &f'
+  vip:
+    tabprefix: '&6VIP&7: &f'
+    tagprefix: '&6VIP&7: &f'
+  player:
+    tabprefix: '&7Игрок: &f'
+    tagprefix: '&7Игрок: &f'
+  default:
+    tabprefix: '&7Игрок: &f'
+    tagprefix: '&7Игрок: &f'
+Users:
+  ArgentoChest: {}
+  dimaxy: {}
+  _NastyaN_: {}
+  Emelka46: {}
+  MODBROYT: {}
+  Rek340: {}
+  Gylak: {}
+  Xessent: {}
+  DEDDOKMOROZ4: {}
+  Dovincik111: {}
+  Gentor1: {}
+  wateron1k: {}
+  Kirya2214K2: {}
+  _Delirek_: {}
+  SeaMFoX: {}
+classic-vanilla-belowname:
+  enabled: false
+  number: '%health%'
+  text: '&a❤'
+enable-collision: false
+revert-collision-rule-in-worlds: []
+do-not-move-spectators: false
+per-server-settings:
+  server123:
+    header:
+    - an example of world with custom
+    footer:
+    - header/footer and prefix/suffix
+    Groups:
+      Owner:
+        tabprefix: '&0&l[&a&lOwner&0&l] &a'
+        tagprefix: '&2&lOwner &a'
+  server2-server3:
+    header:
+    - This is a shared header for
+    - server2 and server3
+placeholders:
+  date-format: dd.MM.yyyy
+  time-format: '[HH:mm:ss / h:mm a]'
+  time-offset: 0
+  remove-strings:
+  - '[]'
+  - < >
+  afk-no: ''
+  afk-yes: ' &4*&4&lAFK&4*&r'
+server-aliases: null
+rank-aliases: null
+disable-features-in-servers:
+  bossbar:
+  - disabledserver
+  tablist-names:
+  - disabledserver
+  tablist-objective:
+  - disabledserver
+  belowname:
+  - disabledserver
+  nametag:
+  - disabledserver
+  header-footer:
+  - disabledserver
+revert-collision-rule-in-servers: []
+unlimited-nametag-prefix-suffix-mode:
+  modify-npc-names: true
+  enabled: true
+  use-marker-tag-for-1-8-x-clients: false
+  disable-on-boats: true
+disable-features-in-worlds:
+  bossbar:
+  - disabledworld
+  tablist-names:
+  - disabledworld
+  belowname:
+  - disabledworld
+  nametag:
+  - disabledworld
+  header-footer:
+  - disabledworld
+  yellow-number:
+  - disabledworld
+per-world-playerlist:
+  enabled: false
+  allow-bypass-permission: false
+  ignore-effect-in-worlds:
+  - ignoredworld
+  - build
+  shared-playerlist-world-groups:
+    lobby:
+    - lobby1
+    - lobby2
+    minigames:
+    - paintball
+    - bedwars
+    DoNotDoThis:
+    - ThisIsASingleWorldSoThereIsNoPointInEvenCreatingGroupForIt
+sort-players-by-permissions: false
+fix-pet-names: false
+use-primary-group: true
+primary-group-finding-list:
+- Owner
+- Admin
+- Helper
+- default
+assign-groups-by-permissions: false
+placeholderapi-refresh-intervals:
+  default-refresh-interval: 100
+  server:
+    '%server_uptime%': 1000
+    '%server_tps_1_colored%': 1000
+  player:
+    '%vault_prefix%': 1000
+    '%player_health%': 200
+    '%player_ping%': 1000
+  relational:
+    '%rel_factionsuuid_relation_color%': 500

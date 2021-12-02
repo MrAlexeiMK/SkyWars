@@ -1,0 +1,3715 @@
+#TAB plugin by NEZNAMY - https://github.com/NEZNAMY/TAB/releases/tag/2.9.2
+#With this plugin players will have colored nicknames in TAB
+
+#PLUGIN CANNOT REGENERATE MAP!
+#You need to use shell script to replace map at your server folder after restart!
+#SHELL EXAMPLE of start.sh (linux)
+#rm -R world
+#cp -avr map world
+#screen -S bw7 -X quit
+#screen -S bw7 -m -d java -Xincgc -server -jar -Xms800m -Xmx800m spigot-1.17.1.jar
+#
+#SHELL EXAMPLE of start.bat (windows)
+#rd /s /q "logs"
+#rd /s /q "world"
+#xcopy map world /D /E /C /R /H /I /K /Y
+#java -jar -Xms600m -Xmx600m spigot-1.17.1.jar
+#
+#folder map should have CLEAN map
+
+bungee_enabled: false
+MySQL:
+  enabled: false
+  url: "jdbc:mysql://localhost:3306/minigames?useSSL=false&autoReConnect=true"
+  user: "root"
+  password: ""
+border_radius: 400.0
+win_money: 50
+kill_money: 5 #in percents (%) of killed player's money
+glasses:
+  default: "WHITE_STAINED_GLASS"
+  vip: "BLUE_STAINED_GLASS" #pex: SkyWars.vip
+  vip+: "YELLOW_STAINED_GLASS" #pex: SkyWars.vip+
+  mvp: "GREEN_STAINED_GLASS" #pex: SkyWars.mvp
+  mvp+: "RED_STAINED_GLASS" #pex: SkyWars.mvp+
+  premium: "BLACK_STAINED_GLASS" #pex: SkyWars.premium
+start_time: 30
+game_time: 2400
+arena:
+  name: null
+  status: edit
+  spawns: []
+chests:
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: LAPIS_LAZULI
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 5%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: FIREWORK_ROCKET
+  meta:
+    ==: ItemMeta
+    meta-type: FIREWORK
+    lore:
+    - 3%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: WOODEN_SWORD
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 30%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: STONE_SWORD
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 20%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_SWORD
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 8%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: DIAMOND_SWORD
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 4%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: BOW
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 30%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: ARROW
+  amount: 8
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 50%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: ARROW
+  amount: 16
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 30%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: ARROW
+  amount: 32
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 10%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: ARROW
+  amount: 64
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 5%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: TURTLE_HELMET
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 3%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_HELMET
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 20%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_CHESTPLATE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 15%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_LEGGINGS
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 20%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_BOOTS
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 25%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: DIAMOND_HELMET
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 8%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: DIAMOND_CHESTPLATE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 5%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: DIAMOND_LEGGINGS
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 7%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: DIAMOND_BOOTS
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 8%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: CROSSBOW
+  meta:
+    ==: ItemMeta
+    meta-type: CROSSBOW
+    lore:
+    - 10%
+    charged: false
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: SHIELD
+  meta:
+    ==: ItemMeta
+    meta-type: TILE_ENTITY
+    lore:
+    - 45%
+    blockMaterial: SHIELD
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: TRIDENT
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 5%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: TOTEM_OF_UNDYING
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 1%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: TIPPED_ARROW
+  amount: 2
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    lore:
+    - 5%
+    potion-type: minecraft:poison
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: TIPPED_ARROW
+  amount: 2
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    lore:
+    - 5%
+    potion-type: minecraft:weakness
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: TIPPED_ARROW
+  amount: 2
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    lore:
+    - 5%
+    potion-type: minecraft:slowness
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: FISHING_ROD
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 8%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: DIAMOND_AXE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 3%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: DIAMOND_PICKAXE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 9%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: DIAMOND_SHOVEL
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 15%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_PICKAXE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 35%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_AXE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 30%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: STONE_AXE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 40%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: GOLDEN_APPLE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 15%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: GOLDEN_APPLE
+  amount: 2
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 10%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: ENCHANTED_GOLDEN_APPLE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 1%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: WATER_BUCKET
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 50%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: LAVA_BUCKET
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 30%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: ENDER_PEARL
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 10%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: MILK_BUCKET
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 5%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: EXPERIENCE_BOTTLE
+  amount: 16
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 25%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: EXPERIENCE_BOTTLE
+  amount: 32
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 15%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: EXPERIENCE_BOTTLE
+  amount: 64
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 5%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: STONE
+  amount: 32
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 5%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: STONE
+  amount: 16
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 20%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: DIORITE
+  amount: 16
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 10%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: DIRT
+  amount: 32
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 15%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: DIRT
+  amount: 16
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 40%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: COBBLESTONE
+  amount: 8
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 40%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: COBBLESTONE
+  amount: 16
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 20%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: OAK_PLANKS
+  amount: 16
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 40%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: OAK_PLANKS
+  amount: 32
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 10%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: OAK_LOG
+  amount: 4
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 3%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: OAK_LOG
+  amount: 8
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 9%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: GLASS
+  amount: 16
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 20%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: ENCHANTING_TABLE
+  meta:
+    ==: ItemMeta
+    meta-type: TILE_ENTITY
+    lore:
+    - 10%
+    blockMaterial: ENCHANTING_TABLE
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: SLIME_BLOCK
+  amount: 4
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 8%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: TNT
+  amount: 2
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 10%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: TNT
+  amount: 4
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 5%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: REDSTONE_TORCH
+  amount: 8
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 15%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: ELYTRA
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 5%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: POTION
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    lore:
+    - 5%
+    potion-type: minecraft:strong_leaping
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: POTION
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    lore:
+    - 5%
+    potion-type: minecraft:long_fire_resistance
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: POTION
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    lore:
+    - 5%
+    potion-type: minecraft:swiftness
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: POTION
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    lore:
+    - 5%
+    potion-type: minecraft:strong_turtle_master
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: POTION
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    lore:
+    - 3%
+    potion-type: minecraft:strength
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: SPLASH_POTION
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    lore:
+    - 5%
+    potion-type: minecraft:harming
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: SPLASH_POTION
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    lore:
+    - 3%
+    potion-type: minecraft:weakness
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: LINGERING_POTION
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    lore:
+    - 5%
+    potion-type: minecraft:strong_slowness
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: LINGERING_POTION
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    lore:
+    - 5%
+    potion-type: minecraft:long_slow_falling
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: FLINT_AND_STEEL
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 25%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_SWORD
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 5%
+    enchants:
+      DAMAGE_ALL: 1
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_SWORD
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 3%
+    enchants:
+      DAMAGE_ALL: 2
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: STONE_SWORD
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 15%
+    enchants:
+      DAMAGE_ALL: 1
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: STONE_SWORD
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 5%
+    enchants:
+      DAMAGE_ALL: 2
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: DIAMOND_SWORD
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 4%
+    enchants:
+      DAMAGE_ALL: 1
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: WOODEN_SWORD
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 5%
+    enchants:
+      FIRE_ASPECT: 2
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_CHESTPLATE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 4%
+    enchants:
+      PROTECTION_ENVIRONMENTAL: 1
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_HELMET
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 4%
+    enchants:
+      PROTECTION_ENVIRONMENTAL: 1
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_LEGGINGS
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 4%
+    enchants:
+      PROTECTION_ENVIRONMENTAL: 1
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_BOOTS
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 4%
+    enchants:
+      PROTECTION_ENVIRONMENTAL: 1
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_LEGGINGS
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 2%
+    enchants:
+      PROTECTION_ENVIRONMENTAL: 2
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_BOOTS
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 2%
+    enchants:
+      PROTECTION_ENVIRONMENTAL: 2
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_HELMET
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 2%
+    enchants:
+      PROTECTION_ENVIRONMENTAL: 2
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: IRON_CHESTPLATE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 2%
+    enchants:
+      PROTECTION_ENVIRONMENTAL: 2
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: DIAMOND_HELMET
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 1%
+    enchants:
+      PROTECTION_ENVIRONMENTAL: 1
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: DIAMOND_BOOTS
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 1%
+    enchants:
+      PROTECTION_ENVIRONMENTAL: 1
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: DIAMOND_CHESTPLATE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 1%
+    enchants:
+      PROTECTION_ENVIRONMENTAL: 1
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: DIAMOND_LEGGINGS
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 1%
+    enchants:
+      PROTECTION_ENVIRONMENTAL: 1
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: BOW
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 5%
+    enchants:
+      ARROW_DAMAGE: 1
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: BOW
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 1%
+    enchants:
+      ARROW_INFINITE: 1
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: BOW
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 2%
+    enchants:
+      ARROW_FIRE: 1
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: CROSSBOW
+  meta:
+    ==: ItemMeta
+    meta-type: CROSSBOW
+    lore:
+    - 2%
+    enchants:
+      MULTISHOT: 1
+    charged: false
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: WITHER_ROSE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 2%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: NETHERITE_INGOT
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 8%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: NETHERITE_INGOT
+  amount: 2
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 4%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: SMITHING_TABLE
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 13%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: SPECTRAL_ARROW
+  amount: 8
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 5%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: TIPPED_ARROW
+  amount: 2
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    lore:
+    - 3%
+    potion-type: minecraft:harming
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: SPLASH_POTION
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    lore:
+    - 4%
+    potion-type: minecraft:strong_swiftness
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: SPLASH_POTION
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    lore:
+    - 6%
+    potion-type: minecraft:strong_healing
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: SPLASH_POTION
+  meta:
+    ==: ItemMeta
+    meta-type: POTION
+    lore:
+    - 2%
+    potion-type: minecraft:strong_regeneration
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: TNT_MINECART
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 1%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: OAK_LEAVES
+  amount: 32
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 5%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: OAK_LEAVES
+  amount: 16
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 2%
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: BOW
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 2%
+    enchants:
+      ARROW_KNOCKBACK: 1
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: BOW
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 1%
+    enchants:
+      ARROW_KNOCKBACK: 2
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: BOW
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 1%
+    enchants:
+      ARROW_KNOCKBACK: 1
+      ARROW_DAMAGE: 1
+- ==: org.bukkit.inventory.ItemStack
+  v: 2578
+  type: ANVIL
+  amount: 1
+  meta:
+    ==: ItemMeta
+    meta-type: UNSPECIFIC
+    lore:
+    - 6%
+kits:
+  Боевой-1:
+    pex: API.player
+    price: 50
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STONE_SWORD
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eБоевой-1 §c(одноразовый)
+        lore:
+        - §7Доступно всем
+        - '§7Цена: §c50 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STONE_SWORD
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GOLDEN_APPLE
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_BOOTS
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_HELMET
+    - null
+  Лучник-1:
+    pex: API.player
+    price: 50
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: BOW
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eЛучник-1 §c(одноразовый)
+        lore:
+        - §7Доступно всем
+        - '§7Цена: §c50 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: BOW
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GOLDEN_APPLE
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ARROW
+      amount: 32
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_BOOTS
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_HELMET
+    - null
+  Танк-1:
+    pex: API.player
+    price: 70
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: SHIELD
+      meta:
+        ==: ItemMeta
+        meta-type: TILE_ENTITY
+        display-name: §eТанк-1 §c(одноразовый)
+        lore:
+        - §7Доступно всем
+        - '§7Цена: §c70 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+        blockMaterial: SHIELD
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: WOODEN_SWORD
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: SHIELD
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_BOOTS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_LEGGINGS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_CHESTPLATE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_HELMET
+    - null
+  Строитель-1:
+    pex: API.player
+    price: 70
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: OAK_LOG
+      amount: 8
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eСтроитель-1 §c(одноразовый)
+        lore:
+        - §7Доступно всем
+        - '§7Цена: §c70 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: OAK_LOG
+      amount: 8
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIRT
+      amount: 32
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STONE
+      amount: 32
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GLASS
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_PICKAXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_AXE
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+  Подрывник-1:
+    pex: API.player
+    price: 100
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TNT
+      amount: 6
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eПодрывник-1 §c(одноразовый)
+        lore:
+        - §7Доступно всем
+        - '§7Цена: §c100 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: FLINT_AND_STEEL
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TNT
+      amount: 6
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: OAK_LOG
+      amount: 8
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEVER
+      amount: 4
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REDSTONE_TORCH
+      amount: 10
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REDSTONE
+      amount: 16
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+  Механик-1:
+    pex: API.player
+    price: 120
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: PISTON
+      amount: 2
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eМеханик-1 §c(одноразовый)
+        lore:
+        - §7Доступно всем
+        - '§7Цена: §c120 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_PICKAXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_SHOVEL
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STONE_AXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: PISTON
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STICKY_PISTON
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEVER
+      amount: 8
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REDSTONE
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REPEATER
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: COMPARATOR
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STONE
+      amount: 32
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REDSTONE_TORCH
+      amount: 12
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: OAK_PRESSURE_PLATE
+      amount: 10
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+  Профи-1:
+    pex: API.player
+    price: 200
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: WATER_BUCKET
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eПрофи-1 §c(одноразовый)
+        lore:
+        - §7Доступно всем
+        - '§7Цена: §c200 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_SWORD
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_AXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: WATER_BUCKET
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIRT
+      amount: 32
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LAVA_BUCKET
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_BOOTS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_LEGGINGS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_CHESTPLATE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_HELMET
+    - null
+  Ассасин-1:
+    pex: API.player
+    price: 150
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TRIDENT
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eАссасин-1 §c(одноразовый)
+        lore:
+        - §7Доступно всем
+        - '§7Цена: §c150 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TRIDENT
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GOLDEN_APPLE
+      amount: 2
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+  Зельевар-1:
+    pex: API.player
+    price: 150
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        display-name: §eЗельевар-1 §c(одноразовый)
+        lore:
+        - §7Доступно всем
+        - '§7Цена: §c150 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+        potion-type: minecraft:strength
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:strong_leaping
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:long_fire_resistance
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:strong_turtle_master
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:strength
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: SPLASH_POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:weakness
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: SPLASH_POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:slow_falling
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: SPLASH_POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:strong_harming
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TURTLE_HELMET
+    - null
+  Боевой-2:
+    pex: API.vip
+    price: 50
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_SWORD
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eБоевой-2 §c(одноразовый)
+        lore:
+        - §7Доступно с [§6VIP§7] и выше
+        - '§7Цена: §c50 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_SWORD
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_AXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GOLDEN_APPLE
+      amount: 2
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEATHER_BOOTS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEATHER_LEGGINGS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_CHESTPLATE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_HELMET
+    - null
+  Лучник-2:
+    pex: API.vip
+    price: 50
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: BOW
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eЛучник-2 §c(одноразовый)
+        lore:
+        - §7Доступно с [§6VIP§7] и выше
+        - '§7Цена: §c50 медных §7монет'
+        enchants:
+          ARROW_DAMAGE: 1
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: BOW
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        enchants:
+          ARROW_DAMAGE: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GOLDEN_APPLE
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ARROW
+      amount: 32
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEATHER_BOOTS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEATHER_LEGGINGS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_CHESTPLATE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_HELMET
+    - null
+  Танк-2:
+    pex: API.vip
+    price: 70
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: SHIELD
+      meta:
+        ==: ItemMeta
+        meta-type: TILE_ENTITY
+        display-name: §eТанк-2 §c(одноразовый)
+        lore:
+        - §7Доступно с [§6VIP§7] и выше
+        - '§7Цена: §c70 медных §7монет'
+        enchants:
+          DURABILITY: 3
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+        blockMaterial: SHIELD
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STONE_SWORD
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: SHIELD
+      meta:
+        ==: ItemMeta
+        meta-type: TILE_ENTITY
+        enchants:
+          DURABILITY: 3
+        blockMaterial: SHIELD
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:long_turtle_master
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:strong_turtle_master
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIAMOND_BOOTS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_LEGGINGS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_CHESTPLATE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIAMOND_HELMET
+    - null
+  Строитель-2:
+    pex: API.vip
+    price: 70
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: CAMPFIRE
+      meta:
+        ==: ItemMeta
+        meta-type: TILE_ENTITY
+        display-name: §eСтроитель-2 §c(одноразовый)
+        lore:
+        - §7Доступно с [§6VIP§7] и выше
+        - '§7Цена: §c70 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+        blockMaterial: CAMPFIRE
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_AXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_PICKAXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_SHOVEL
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: OAK_LOG
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIRT
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GLASS
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STONE
+      amount: 32
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: COBBLESTONE_WALL
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: CAMPFIRE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: CRAFTING_TABLE
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: COBWEB
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: WHITE_CARPET
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: BELL
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+  Подрывник-2:
+    pex: API.vip
+    price: 100
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TNT
+      amount: 12
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eПодрывник-2 §c(одноразовый)
+        lore:
+        - §7Доступно с [§6VIP§7] и выше
+        - '§7Цена: §c100 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: FLINT_AND_STEEL
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TNT
+      amount: 12
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: OAK_LOG
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEVER
+      amount: 8
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REDSTONE_TORCH
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REDSTONE
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STONE_PRESSURE_PLATE
+      amount: 10
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_HELMET
+    - null
+  Механик-2:
+    pex: API.vip
+    price: 120
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TRAPPED_CHEST
+      amount: 2
+      meta:
+        ==: ItemMeta
+        meta-type: TILE_ENTITY
+        display-name: §eМеханик-2 §c(одноразовый)
+        lore:
+        - §7Доступно с [§6VIP§7] и выше
+        - '§7Цена: §c120 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+        blockMaterial: TRAPPED_CHEST
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_PICKAXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_SHOVEL
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_AXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: PISTON
+      amount: 4
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STICKY_PISTON
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEVER
+      amount: 8
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REDSTONE
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REPEATER
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TRAPPED_CHEST
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: COMPARATOR
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STONE
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REDSTONE_TORCH
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: OAK_PRESSURE_PLATE
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TRIPWIRE_HOOK
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STRING
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: HOPPER
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DISPENSER
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DROPPER
+      amount: 2
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEATHER_BOOTS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEATHER_LEGGINGS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEATHER_CHESTPLATE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEATHER_HELMET
+    - null
+  Профи-2:
+    pex: API.vip
+    price: 150
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: FISHING_ROD
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eПрофи-2 §c(одноразовый)
+        lore:
+        - §7Доступно с [§6VIP§7] и выше
+        - '§7Цена: §c150 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_SWORD
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_AXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: WATER_BUCKET
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LAVA_BUCKET
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIRT
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GOLDEN_APPLE
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: SHIELD
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: FISHING_ROD
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_BOOTS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_LEGGINGS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_CHESTPLATE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_HELMET
+    - null
+  Ассасин-2:
+    pex: API.vip
+    price: 150
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TRIDENT
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eАссасин-2 §c(одноразовый)
+        lore:
+        - §7Доступно с [§6VIP§7] и выше
+        - '§7Цена: §c150 медных §7монет'
+        enchants:
+          LOYALTY: 1
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TRIDENT
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        enchants:
+          LOYALTY: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GOLDEN_APPLE
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STONE
+      amount: 32
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIAMOND_HELMET
+    - null
+  Музыкант-1:
+    pex: API.vip
+    price: 100
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: JUKEBOX
+      amount: 4
+      meta:
+        ==: ItemMeta
+        meta-type: TILE_ENTITY
+        display-name: §eМузыкант-1 §c(одноразовый)
+        lore:
+        - §7Доступно с [§6VIP§7] и выше
+        - '§7Цена: §c100 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+        blockMaterial: JUKEBOX
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIAMOND_PICKAXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_AXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: NOTE_BLOCK
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: JUKEBOX
+      amount: 4
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: MUSIC_DISC_13
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: MUSIC_DISC_CAT
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: MUSIC_DISC_BLOCKS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: MUSIC_DISC_CHIRP
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: MUSIC_DISC_FAR
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: MUSIC_DISC_MALL
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: MUSIC_DISC_MELLOHI
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: MUSIC_DISC_STAL
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: MUSIC_DISC_STRAD
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: MUSIC_DISC_WARD
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: MUSIC_DISC_11
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: MUSIC_DISC_WAIT
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEATHER_BOOTS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEATHER_LEGGINGS
+      meta:
+        ==: ItemMeta
+        meta-type: LEATHER_ARMOR
+        color:
+          ==: Color
+          RED: 254
+          BLUE: 61
+          GREEN: 216
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEATHER_CHESTPLATE
+      meta:
+        ==: ItemMeta
+        meta-type: LEATHER_ARMOR
+        color:
+          ==: Color
+          RED: 176
+          BLUE: 38
+          GREEN: 46
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEATHER_HELMET
+    - null
+  Боевой-3:
+    pex: API.mvp
+    price: 70
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIAMOND_SWORD
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eБоевой-3 §c(одноразовый)
+        lore:
+        - §7Доступно с [§bMVP§7] и выше
+        - '§7Цена: §c70 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIAMOND_SWORD
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_AXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GOLDEN_APPLE
+      amount: 5
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: SHIELD
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_BOOTS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_LEGGINGS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_CHESTPLATE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_HELMET
+    - null
+  Арбалетчик-1:
+    pex: API.mvp
+    price: 100
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: CROSSBOW
+      meta:
+        ==: ItemMeta
+        meta-type: CROSSBOW
+        display-name: §eАрбалетчик-1 §c(одноразовый)
+        lore:
+        - §7Доступно с [§bMVP§7] и выше
+        - '§7Цена: §c100 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+        charged: false
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: CROSSBOW
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GOLDEN_APPLE
+      amount: 2
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ARROW
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TIPPED_ARROW
+      amount: 8
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:long_weakness
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TIPPED_ARROW
+      amount: 2
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:slowness
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_BOOTS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_LEGGINGS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_CHESTPLATE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_HELMET
+    - null
+  Священник-1:
+    pex: API.mvp
+    price: 150
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TOTEM_OF_UNDYING
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eСвященник-1 §c(одноразовый)
+        lore:
+        - §7Доступно с [§bMVP§7] и выше
+        - '§7Цена: §c150 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GOLDEN_SWORD
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        enchants:
+          DAMAGE_ALL: 1
+          DURABILITY: 3
+          FIRE_ASPECT: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GOLDEN_APPLE
+      amount: 4
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: WATER_BUCKET
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: MILK_BUCKET
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TOTEM_OF_UNDYING
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_BOOTS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_LEGGINGS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_CHESTPLATE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: CHAINMAIL_HELMET
+    - null
+  Строитель-3:
+    pex: API.mvp+
+    price: 120
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_BARS
+      amount: 32
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eСтроитель-3 §c(одноразовый)
+        lore:
+        - §7Доступно с [§bMVP+§7] и выше
+        - '§7Цена: §c120 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_AXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIAMOND_PICKAXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_SHOVEL
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: OAK_LOG
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIRT
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GLASS
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STONE
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: COBBLESTONE_WALL
+      amount: 32
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_BARS
+      amount: 32
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: CAMPFIRE
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: CRAFTING_TABLE
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: COBWEB
+      amount: 10
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: WHITE_CARPET
+      amount: 32
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: BELL
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: OAK_STAIRS
+      amount: 32
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: SHEARS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: OAK_FENCE
+      amount: 32
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: RAIL
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ACTIVATOR_RAIL
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: POWERED_RAIL
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: MINECART
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: OAK_BOAT
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: WATER_BUCKET
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LAVA_BUCKET
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: BRICKS
+      amount: 64
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEATHER_BOOTS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEATHER_LEGGINGS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEATHER_CHESTPLATE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEATHER_HELMET
+    - null
+  Подрывник-3:
+    pex: API.mvp+
+    price: 150
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TNT
+      amount: 24
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eПодрывник-3 §c(одноразовый)
+        lore:
+        - §7Доступно с [§bMVP+§7] и выше
+        - '§7Цена: §c150 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: FLINT_AND_STEEL
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TNT
+      amount: 24
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: OAK_LOG
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEVER
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REDSTONE_TORCH
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REDSTONE
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STONE_PRESSURE_PLATE
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REDSTONE_BLOCK
+      amount: 4
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TNT_MINECART
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STONE_BUTTON
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: WATER_BUCKET
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LAVA_BUCKET
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_BOOTS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_LEGGINGS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_CHESTPLATE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_HELMET
+    - null
+  Механик-3:
+    pex: API.mvp+
+    price: 150
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIAMOND_PICKAXE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eМеханик-3 §c(одноразовый)
+        lore:
+        - §7Доступно с [§bMVP+§7] и выше
+        - '§7Цена: §c150 медных §7монет'
+        enchants:
+          DIG_SPEED: 3
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIAMOND_PICKAXE
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        enchants:
+          DIG_SPEED: 3
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_SHOVEL
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_AXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STONE
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REDSTONE
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LEVER
+      amount: 8
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: HOPPER
+      amount: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REPEATER
+      amount: 4
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: WATER_BUCKET
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TRAPPED_CHEST
+      amount: 4
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: COMPARATOR
+      amount: 4
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: PISTON
+      amount: 8
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REDSTONE_TORCH
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: OAK_PRESSURE_PLATE
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TRIPWIRE_HOOK
+      amount: 8
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STRING
+      amount: 32
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DROPPER
+      amount: 4
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DISPENSER
+      amount: 8
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_INGOT
+      amount: 16
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: REDSTONE
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STICKY_PISTON
+      amount: 8
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: WHITE_CARPET
+      amount: 32
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LAVA_BUCKET
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LAVA_BUCKET
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LAVA_BUCKET
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_BOOTS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_LEGGINGS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_CHESTPLATE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_HELMET
+    - null
+  Профи-3:
+    pex: API.mvp+
+    price: 180
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_SWORD
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eПрофи-3 §c(одноразовый)
+        lore:
+        - §7Доступно с [§bMVP+§7] и выше
+        - '§7Цена: §c180 медных §7монет'
+        enchants:
+          KNOCKBACK: 2
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_SWORD
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        enchants:
+          KNOCKBACK: 2
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIAMOND_AXE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: WATER_BUCKET
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: LAVA_BUCKET
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIRT
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GOLDEN_APPLE
+      amount: 4
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: SHIELD
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:slow_falling
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: FISHING_ROD
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_BOOTS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_LEGGINGS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_CHESTPLATE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIAMOND_HELMET
+    - null
+  Ассасин-3:
+    pex: API.premium
+    price: 150
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TRIDENT
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eАссасин-3 §c(одноразовый)
+        lore:
+        - §7Доступно с [§9Premium§7] и выше
+        - '§7Цена: §c150 медных §7монет'
+        enchants:
+          LOYALTY: 3
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TRIDENT
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        enchants:
+          LOYALTY: 3
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GOLDEN_APPLE
+      amount: 3
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: STONE
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:invisibility
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: POTION
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:slow_falling
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENDER_PEARL
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+  Чародей-1:
+    pex: API.premium
+    price: 200
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: EXPERIENCE_BOTTLE
+      amount: 64
+      meta:
+        ==: ItemMeta
+        meta-type: UNSPECIFIC
+        display-name: §eЧародей-1 §c(одноразовый)
+        lore:
+        - §7Доступно с [§9Premium§7] и выше
+        - '§7Цена: §c200 медных §7монет'
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: EXPERIENCE_BOTTLE
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: EXPERIENCE_BOTTLE
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: EXPERIENCE_BOTTLE
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: EXPERIENCE_BOTTLE
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: EXPERIENCE_BOTTLE
+      amount: 64
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTING_TABLE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ANVIL
+      amount: 2
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          QUICK_CHARGE: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          RIPTIDE: 3
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          PIERCING: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          LOYALTY: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          MULTISHOT: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          PROTECTION_ENVIRONMENTAL: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          PROTECTION_ENVIRONMENTAL: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          PROTECTION_ENVIRONMENTAL: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          PROTECTION_ENVIRONMENTAL: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          PROTECTION_ENVIRONMENTAL: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          PROTECTION_ENVIRONMENTAL: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          PROTECTION_ENVIRONMENTAL: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          ARROW_DAMAGE: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          DAMAGE_ALL: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          DAMAGE_ALL: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          DAMAGE_ALL: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          THORNS: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          THORNS: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          KNOCKBACK: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          DURABILITY: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          ARROW_FIRE: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          FIRE_ASPECT: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          FIRE_ASPECT: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          ARROW_INFINITE: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          CHANNELING: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          DURABILITY: 1
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ENCHANTED_BOOK
+      meta:
+        ==: ItemMeta
+        meta-type: ENCHANTED
+        stored-enchants:
+          DURABILITY: 1
+    - null
+    - null
+    - null
+    - null
+    - null
+  Арбалетчик-2:
+    pex: API.premium
+    price: 150
+    disp:
+      ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: CROSSBOW
+      meta:
+        ==: ItemMeta
+        meta-type: CROSSBOW
+        display-name: §eАрбалетчик-2 §c(одноразовый)
+        lore:
+        - §7Доступно с [§9Premium§7] и выше
+        - '§7Цена: §c150 медных §7монет'
+        enchants:
+          MULTISHOT: 1
+          DURABILITY: 3
+        ItemFlags:
+        - HIDE_ATTRIBUTES
+        charged: false
+    extra:
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: CROSSBOW
+      meta:
+        ==: ItemMeta
+        meta-type: CROSSBOW
+        enchants:
+          MULTISHOT: 1
+          DURABILITY: 3
+        charged: false
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: GOLDEN_APPLE
+      amount: 5
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: WATER_BUCKET
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: DIRT
+      amount: 32
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: ARROW
+      amount: 32
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TIPPED_ARROW
+      amount: 12
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:long_weakness
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: TIPPED_ARROW
+      amount: 8
+      meta:
+        ==: ItemMeta
+        meta-type: POTION
+        potion-type: minecraft:slowness
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: SPECTRAL_ARROW
+      amount: 12
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - null
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_BOOTS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_LEGGINGS
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_CHESTPLATE
+    - ==: org.bukkit.inventory.ItemStack
+      v: 2578
+      type: IRON_HELMET
+    - null
+  
